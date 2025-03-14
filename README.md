@@ -1,41 +1,77 @@
- HEAD
-# wedding-seating-app
-A web-based application that helps wedding guests easily find their assigned tables or register for available seats upon arrival. Guests can search for their names, view a hall layout with table positions, and claim open seats if they are not pre-registered. The app is designed for ease of use, ensuring a smooth check-in process for all attendees.
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wedding Seat app
 
-## Getting Started
+## Overview
+The **Wedding Seat app** is a web application that allows wedding guests to quickly find their assigned seats. It provides a seamless experience for guests to search for their table, view the wedding hall layout, and register for a seat if they are not on the guest list.
 
-First, run the development server:
+## Features
+- **Guest Search**: Guests can search for their assigned table by entering their name.
+- **Table Layout View**: Displays a wedding hall layout with assigned seating.
+- **Guest Registration**: Unregistered guests can check in and be assigned to available tables.
+- **Real-Time Updates**: Seat availability is dynamically updated when guests claim tables.
+- **User-Friendly Interface**: Designed to be accessible for all ages with a responsive UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Frontend**: Next.js, React
+
+## Project Structure
+```plaintext
+📂 project-root
+ ├── 📁 components      # Reusable components (TableLayout, SearchGuest, GuestForm)
+ ├── 📁 pages           # Next.js pages (EventPage, API routes)
+ ├── 📁 styles          # CSS Module files for styling
+ ├── 📄 page.tsx        # Main event page
+ ├── 📄 SearchGuest.tsx # Search guest component
+ ├── 📄 TableLayout.tsx # Displays wedding hall layout with tables
+ ├── 📄 GuestForm.tsx   # Guest registration form
+ ├── 📄 README.md       # Documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation & Setup
+### Clone the repository
+```sh
+git clone https://github.com/livinusonyenso/wedding-seating-app.git
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Navigate to the project directory
+```sh
+cd wedding-seat-app
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Install dependencies
+```sh
+npm install
+```
 
-## Learn More
+### Run the development server
+```sh
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Open in browser
+Visit [http://localhost:3000](http://localhost:3000) to access the app.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API Endpoints
+### GET /api/event/:id
+Retrieves wedding event details and table layout.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### GET /api/event/:id/guests?q={name}
+Searches for a guest by name.
 
-## Deploy on Vercel
+### POST /api/event/:id/guest
+Registers a new guest and assigns them a table.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage Guide
+### Searching for a Guest
+1. Enter your name in the search bar.
+2. Click "Search" to find your assigned table.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
- 385561a (Initial commit from Create Next App)
+### Registering as a Guest
+1. Click "Register" if your name is not found.
+2. Fill in your name, phone number, and number of guests.
+3. Select an available table and confirm your seat ( in development ) .
+
+## Contribution
+We welcome contributions! Feel free to fork this repository and submit pull requests.
+
+## License
+This project is licensed under the MIT License.
