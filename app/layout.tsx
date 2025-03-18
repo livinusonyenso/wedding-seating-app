@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Wedding Seating App",
   description: "Find your seat at the wedding",
-    generator: 'v0.dev'
+ 
 }
 
 export default function RootLayout({
